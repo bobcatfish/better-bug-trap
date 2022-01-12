@@ -22,7 +22,7 @@ def get_rate_hub(coin):
     return CatCoinHub()
 
 
-def get_daily_rates(coin, num_days=MAX):
+def get_daily_rates(coin, num_days=7):
     rate_hub = get_rate_hub(coin)
     rates = rate_hub.get_rates(num_days)
     return rates
