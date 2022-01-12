@@ -12,8 +12,8 @@ class DogCoinHub(object):
 class CatCoinHub(object):
   def get_rates(self, num_days):
     if num_days == MAX:
-      return [2.0] * 100
-    return [2.0] * num_days
+      return [2.5] * 100
+    return [2.5] * num_days
 
 
 def get_rate_hub(coin):
