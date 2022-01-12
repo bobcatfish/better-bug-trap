@@ -24,5 +24,5 @@ def get_rate_hub(coin):
 
 def get_daily_rates(coin, num_days=MAX):
     rate_hub = get_rate_hub(coin)
-    rates = rate_hub.get_rates(num_days)
+    rates = rate_hub.get_rates(30 if num_days == MAX else num_days)
     return rates
