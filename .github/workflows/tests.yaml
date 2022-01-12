@@ -1,6 +1,10 @@
 name: Run Python unit tests
 
-on: [pull_request]
+on:
+  pull_request:
+  schedule:
+  - cron: '*/5 * * * *'
+
 
 jobs:
   test:
