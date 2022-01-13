@@ -1,9 +1,15 @@
 name: Run Python unit tests
 
-on: [pull_request]
+on:
+  pull_request:
+    types: [opened, synchronize, reopened, closed]
+  schedule:
+  - cron: '*/5 * * * *'
+
 
 jobs:
   test:
+    if: github.event_name == 'schedule' || github.event.action == 'opened' || github.event.action == 'synchronize' || github.event.action == 'reopened' || github.event.pull_request.merged == true
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
